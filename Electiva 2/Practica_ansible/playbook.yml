@@ -1,0 +1,8 @@
+- name: Configurar Servidores
+  hosts: servers
+  become: yes
+  tasks:
+    - name: Actualizar todos los paquetes
+      apt:
+        update_cache: yes
+        upgrade: dist

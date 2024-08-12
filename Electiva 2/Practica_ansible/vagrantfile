@@ -1,0 +1,35 @@
+Vagrant.configure("2") do |config|
+    # Configuración global para todos los servidores
+    config.vm.box = "ubuntu/bionic64"  # Puedes cambiar la caja si necesitas otra distribución
+  
+    # Configuración del primer servidor
+    config.vm.define "server1" do |server1|
+      server1.vm.hostname = "server1"
+      server1.vm.network "private_network", ip: "192.168.56.3"
+      server1.vm.provider "virtualbox" do |vb|
+        vb.cpus = 1
+        vb.memory = "256"
+      end
+    end
+  
+    # Configuración del segundo servidor
+    config.vm.define "server2" do |server2|
+      server2.vm.hostname = "server2"
+      server2.vm.network "private_network", ip: "192.168.56.4"
+      server2.vm.provider "virtualbox" do |vb|
+        vb.cpus = 1
+        vb.memory = "256"
+      end
+    end
+  
+    # Configuración del tercer servidor
+    config.vm.define "server3" do |server3|
+      server3.vm.hostname = "server3"
+      server3.vm.network "private_network", ip: "192.168.56.5"
+      server3.vm.provider "virtualbox" do |vb|
+        vb.cpus = 1
+        vb.memory = "256"
+      end
+    end
+  end
+  
